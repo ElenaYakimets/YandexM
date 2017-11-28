@@ -15,8 +15,8 @@ TOKEN = 'AQAAAAABHBaxAASt0yT51Qj13UOgtBeZLNq1RsE'
 
 
 class YMuser:
-    management_URL = 'https://api-metrika.yandex.ru/management/v1/'
-    analytics_URL = 'https://api-metrika.yandex.ru/stat/v1/data'
+    manag_URL = 'https://api-metrika.yandex.ru/management/v1/'
+    stat_URL = 'https://api-metrika.yandex.ru/stat/v1/data'
 
 
 def get_headers(self):
@@ -34,10 +34,10 @@ def get_count(self):
     return response.json()
 
 
-def get_users(self, counter_id=APP_ID):
-    if counter_id is None:
-        counter_id = self.get_counters()['counters'][0]['id']
-        headers = self.get_headers()
-        params = dict(id=counter_id, metrics='ym:s:users')
-        response = requests.get(self.analytics_URL, params=params, headers=headers)
-        return response.json()
+# def get_users(self, counter_id=APP_ID):
+#     if counter_id is None:
+#         counter_id = self.get_counters()['counters'][0]['id']
+#         headers = self.get_headers()
+#         params = dict(id=counter_id, metrics='ym:s:users')
+#         response = requests.get(self.analytics_URL, params=params, headers=headers)
+#         return response.json()
