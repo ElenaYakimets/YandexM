@@ -28,7 +28,7 @@ def get_headers(self):
 
 
 def get_count(self):
-    url = urljoin(self.management_URL, 'counters')
+    url = urljoin(self.manag_URL, 'counters')
     headers = self.get_headers()
     response = requests.get(url, headers=headers)
     return response.json()
